@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --light: #ffffff;
+    --color-text: #2b5ba3;
+    --box-shadow: 
+    5px 5px 15px #c1c8d3, 
+    -5px -5px 15px #f6f6f7;
+    --gradient-bg: linear-gradient(-45deg, #611dce, #24BAe3);
+}
+
+a {
+    color: hsl(180, 26%, 4%);
+    text-decoration: none;
+}
+
+          
+
+body {
+    margin: 0;
+    background-color: var(--light);
+    color: var(--color-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+} 
+
+header {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 30px);
+    padding: 10px;
+    border-bottom: 1px solid #e4dcdd;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: var(--light);
+    z-index: 1;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+header ul li {
+    padding: 0 30px;
+}
+
+.container {
+    width: 1400px;
+    max-width: 90%;
+    margin: auto;
+
+    
+    
+}
+
+.banner {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+}
+
+.banner .content {
+    text-align: justify;
+    padding-right: 50px;
+}
+
+.banner .content h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.gradientText {
+    display: inline-block;
+    background: var(--gradient-bg);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.job {
+    display: inline-block;
+}
+
+.job::before {
+    content: attr(data-job1);
+    overflow: hidden;
+    display: inline-flex;
+    animation: effectText 1s linear infinite alternate,
+    changeText 4s linear infinite;
+}
+
+@keyframes effectText {
+    from {
+        max-width: 0;
+    }
+    to {
+        max-width: 700px;
+    }
+}
+
+@keyframes changeText {
+    from {
+        content: attr(data-job1);
+    }
+    to {
+        content: attr(data-job2);
+    }
+}
+
+
+
+/* Outras classes */
+.banner .avatar {
+    position: relative;
+    height: max-content;
+    text-align: center;
+}
+
+.banner .avatar::before {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    content: '';
+    z-index: -1;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.banner img {
+    width: 90%;
+}
+
+header .navDiv,
+header .nav label,
+header input {
+    display: none;
+}
+
+
+.listaHabilidade {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+}
+
+.listaHabilidade .evaluate {
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.listaHabilidade .evaluate::before {
+    position: absolute;
+    height: 100%;
+    width: var(--point);
+    background-image: var(--gradient-bg);
+    content: '';
+    border-radius: 10px;
+}
+
+
+.listaProjeto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+}
+
+.listaProjeto .item {
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.listaProjeto .item img {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.listaProjeto .item {
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.titulo {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    
+}
+
+
+
+/* Inicio da logo de rede sociais */
+ul {
+    list-style: none;
+}
+  
+.redeSocial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.redeSocial .icon-content {
+    margin: 0 8px;
+    position: relative;
+}
+  
+.redeSocial .icon-content .tooltip {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 10px; /* Bordas mais arredondadas para o tooltip */
+    opacity: 0;
+    visibility: hidden;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+  
+.redeSocial .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -30px;
+  }
+  
+.redeSocial .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px; /* Tamanho dos ícones */
+    height: 70px; /* Tamanho dos ícones */
+    border-radius: 50%; /* Arredondar os ícones para círculos */
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+  
+.redeSocial .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgba(36, 7, 7, 0.12);
+  }
+  
+.redeSocial .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+}
+  
+.redeSocial .icon-content a:hover {
+    color: white;
+}
+  
+.redeSocial .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+  
+.redeSocial .icon-content a:hover .filled {
+    height: 100%;
+}
+  
+.redeSocial .icon-content a[data-social="linkedin"] .filled,
+.redeSocial .icon-content a[data-social="linkedin"] ~ .tooltip {
+    background-color: #0274b3;
+  }
+  
+.redeSocial .icon-content a[data-social="github"] .filled,
+.redeSocial .icon-content a[data-social="github"] ~ .tooltip {
+    background-color: #24262a;
+}
+  
+.redeSocial .icon-content a[data-social="instagram"] .filled,
+.redeSocial .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+}
+  
+.redeSocial .icon-content a[data-social="youtube"] .filled,
+.redeSocial .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+}
+  
+.encontrar {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-size: 20px;
+}
+  
+.encontrar ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+  }
+  
+.encontrar ul li {
+    width: 70px; /* Tamanho do ícone */
+    height: 70px; /* Tamanho do ícone */
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    border-radius: 50%; /* Arredondar para círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+  
+.encontrar ul li .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 10px; /* Bordas mais arredondadas para o tooltip */
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+  
+.encontrar ul li:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+  
+.encontrar ul li a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Tamanho ajustado do ícone */
+    height: 50px; /* Tamanho ajustado do ícone */
+    border-radius: 50%; /* Arredondar os ícones para círculos */
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+  
+.encontrar ul li a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+  
+.encontrar ul li a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+  
+.encontrar ul li a:hover {
+    color: white;
+}
+  
+.encontrar ul li a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+  
+.encontrar ul li a:hover .filled {
+    height: 100%;
+}
+  
+.encontrar ul li a[data-social="linkedin"] .filled,
+.encontrar ul li a[data-social="linkedin"] ~ .tooltip {
+    background-color: #0274b3;
+}
+  
+.encontrar ul li a[data-social="github"] .filled,
+.encontrar ul li a[data-social="github"] ~ .tooltip {
+    background-color: #24262a;
+}
+  
+.encontrar ul li a[data-social="instagram"] .filled,
+.encontrar ul li a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+}
+  
+.encontrar ul li a[data-social="youtube"] .filled,
+.encontrar ul li a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+}
+
+.container-rodape {
+    position: relative;
+    padding: 20px 0;
+    line-height: 34px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+}
+
+.container-rodape span {
+    color: #2b5ba3;
+}
+
+.container-rodape a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+
+    background-image: url("./seta-para-cima.png");
+    background-position: center;
+    background-size: cover;
+    background-color: #000000;
+    border-radius: 50px;
+}
+
+  
+
+/* Responsividade - Desktop */
+@media screen and (min-width: 1224px) {
+    /* Adicionar mais ajustes, se necessário */
+}
+
+/* iPads (Retrato e Paisagem) */
+@media only screen and (max-width: 1024px) {
+    .banner {
+        grid-template-columns: 40% 60%;
+    }
+
+    .banner .content h1 {
+        font-size: 2em;
+    }
+
+    .listProject {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .banner {
+        grid-template-columns: 1fr;
+    }
+
+    .banner .content h1 {
+        font-size: 1.2em;
+    }
+
+    .banner .avatar {
+        grid-row-start: 1;
+    }
+
+    header .navDiv {
+        display: flex;
+        justify-content: end;
+    }
+
+    header label {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: red;
+        box-shadow: var(--box-shadow);
+        border-radius: 50%;
+    }
+
+    header .nav {
+        position: fixed;
+        background-color: #F0F3F5;
+        z-index: 1;
+        width: 70%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 70px);
+        transform: translateX(-100%);
+        transition: 0.5s;
+    }
+
+    input#menu:checked ~ .nav {
+        transform: translateX(0%);
+    }
+
+    header .nav label {
+        width: 50px;
+        height: 50px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: red;
+    }
+
+    .banner .content {
+        padding-right: 0px;
+    }
+
+    .listaHabilidade {
+        grid-template-columns: 1fr;
+    }
+
+    .listaProjeto {
+        grid-template-columns: 1fr;
+    }
+}
